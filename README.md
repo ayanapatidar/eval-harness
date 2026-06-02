@@ -75,9 +75,9 @@ Of course, a more complex model would have an easier time with this, but I wante
 
 Still saw errors, though. The model has on average a 70-80% chance of getting this specific prompt right (an increase from a previous 40-60%). How do I know that? Well: 
 
-### v5 (Statistical Stability Testing)
+### v6 (Statistical Stability Testing)
 
-Calling it v5 is a bit misleading because I started doing this in parallel with v4. I love a little statistical analysis--- nothing too fancy. 
+Calling it v6 is a bit misleading because I started doing this in parallel with v4. I love a little statistical analysis--- nothing too fancy. 
 
 Added N_RUNS parameter to run each test case multiple times and compute:
 - Mean accuracy across runs
