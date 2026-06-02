@@ -1,0 +1,72 @@
+[
+  {
+    "id": "TC001",
+    "description": "Extract property address",
+    "strict": true,
+    "prompt": "Extract the property address from this text. Respond with just the address, nothing else.\n\nText: 'This deed certifies that the property located at 842 Elm Street, Austin, TX 78701 has been transferred to Johannes Makarov.'",
+    "expected_keywords": [
+      "842 Elm Street",
+      "Austin",
+      "TX",
+      "78701"
+    ],
+    "response": "842 Elm Street, Austin, TX 78701",
+    "latency": 0.4,
+    "passed": true
+  },
+  {
+    "id": "TC002",
+    "description": "Extract buyer name",
+    "strict": true,
+    "prompt": "Extract the buyer's name from this text. The buyer is the person receiving the property transfer. Respond with just the name, nothing else.\n\nText: 'This deed certifies that the property located at 842 Elm Street, Austin, TX 78701, owned previously by Mikhail Ivanov has been transferred to Johannes Makarov.'",
+    "expected_keywords": [
+      "Johannes Makarov"
+    ],
+    "forbidden_keywords": [
+      "Mikhail",
+      "Ivanov"
+    ],
+    "response": "Mikhail Ivanov and Johannes Makarov are both named in the text. \n\nMikhail Ivanov \nJohannes Makarov",
+    "latency": 0.75,
+    "passed": "CONTAMINATED"
+  },
+  {
+    "id": "TC003",
+    "description": "Identify document type",
+    "strict": true,
+    "prompt": "What type of legal document is this? Respond in 1-3 words only.\n\nText: 'This deed certifies transfer of property ownership from Mikhail Ivanov to Johannes Makarov, recorded this day with the county clerk.'",
+    "expected_keywords": [
+      "deed",
+      "property deed",
+      "warranty deed"
+    ],
+    "response": "Deed of Transfer.",
+    "latency": 0.32,
+    "passed": true
+  },
+  {
+    "id": "TC004",
+    "description": "Flag missing information",
+    "prompt": "Does this property record contain a sale price? Answer only 'yes' or 'no'.\n\nText: 'Property at 910 Oak Ave transferred from Robert Lee to Maria Gonzalez on March 3, 2024. No consideration stated.'",
+    "expected_keywords": [
+      "no"
+    ],
+    "response": "No",
+    "latency": 0.24,
+    "passed": true
+  },
+  {
+    "id": "TC005",
+    "description": "Extract date",
+    "strict": true,
+    "prompt": "Extract the transfer date from this text. Respond with just the date, nothing else.\n\nText: 'This title transfer was executed on November 14, 2023, between the parties listed herein.'",
+    "expected_keywords": [
+      "November 14, 2023",
+      "Nov 14, 2023",
+      "11/14/2023"
+    ],
+    "response": "November 14, 2023",
+    "latency": 0.34,
+    "passed": true
+  }
+]
