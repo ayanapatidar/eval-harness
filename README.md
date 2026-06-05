@@ -126,5 +126,5 @@ What if the model invents a name or date not present in the document? Current sc
 
 This was fun! A 100% pass rate on the first run would have been less interesting than this. The failure modes revealed real production concerns--- safety guardrails interfering with business tasks, entity disambiguation, ambiguity deflection, and output verbosity--- some of which I wouldn't have considered without trying this out. 
 
-You can't always fix the model. But if I know where to look, I can try! 
+If I have a little more time to tinker with this, I hope I can hammer something nice out. Eventually the hope is to be able to pass in full pdfs and see how the models react. It'll be fun! 
 
